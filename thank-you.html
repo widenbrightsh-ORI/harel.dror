@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics="">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600;700;800;900&amp;family=Assistant:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+  body{margin:0;background:#f7f5f1}
+  ::selection{background:#f5a623;color:#0a2540}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+  .acc-row{cursor:pointer;transition:background .2s ease}
+  .acc-row:hover{background:#f7f5f1}
+  .rule-icon{flex:none;width:38px;height:38px;border-radius:10px;background:rgba(245,166,35,.12);color:#f5a623;display:flex;align-items:center;justify-content:center;font-size:18px}
+</style>
+</helmet>
+
+<div dir="rtl" lang="he" style="font-family:'Assistant',sans-serif;background:#f7f5f1;color:#1c2733;line-height:1.6;min-height:100vh">
+
+  <!-- HEADER -->
+  <div style="padding:20px clamp(20px,5vw,52px);display:flex;align-items:center;justify-content:space-between">
+    <a href="./index.html" style="font-family:'Heebo',sans-serif;font-weight:800;font-size:17px;color:#0a2540;display:flex;align-items:center;gap:10px;text-decoration:none">
+      <span style="width:9px;height:9px;border-radius:50%;background:#f5a623"></span>
+      הראל דרור
+    </a>
+  </div>
+
+  <div style="max-width:760px;margin:0 auto;padding:clamp(8px,2vw,16px) clamp(20px,5vw,52px) clamp(64px,10vw,110px)">
+
+    <!-- CONFIRMATION -->
+    <div style="text-align:center;animation:fadeUp .5s cubic-bezier(.16,1,.3,1) both;margin-bottom:44px">
+      <div style="width:60px;height:60px;border-radius:50%;background:rgba(245,166,35,.12);color:#f5a623;font-size:28px;display:flex;align-items:center;justify-content:center;margin:0 auto 20px">&#10003;</div>
+      <h1 style="font-family:'Heebo',sans-serif;font-weight:900;font-size:clamp(24px,4.5vw,32px);color:#0a2540;margin:0 0 12px">הפרטים שלך התקבלו!</h1>
+      <p style="font-size:16.5px;color:#5b6472;max-width:480px;margin:0 auto">{{ greeting }}, תודה שהקדשת מזמנך למלא את השאלון. הראל או צוותו ייצרו איתך קשר אישי בהקדם (בדרך כלל תוך יום עסקים) לתיאום מועד לפגישת האבחון הפיננסי.</p>
+    </div>
+
+    <!-- ACCORDION -->
+    <div style="margin-bottom:44px">
+      <h2 style="font-family:'Heebo',sans-serif;font-weight:800;font-size:clamp(20px,3.5vw,25px);color:#0a2540;text-align:center;margin:0 0 20px">מה כדאי לדעת לפני הפגישה</h2>
+      <div style="background:#fff;border:1px solid #e6e0d4;border-radius:18px;overflow:hidden">
+        <sc-for list="{{ accordionItems }}" as="item" hint-placeholder-count="3">
+          <div class="acc-row" onClick="{{ item.toggle }}" style="padding:16px 20px;border-bottom:1px solid #eee6d6">
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+              <span style="font-weight:700;font-size:15px;color:#0a2540">{{ item.title }}</span>
+              <span style="color:#8a93a3;font-size:13px;transition:transform .2s ease;transform:{{ item.chevron }};flex:none">&#9660;</span>
+            </div>
+            <sc-if value="{{ item.open }}" hint-placeholder-val="{{ false }}">
+              <p style="margin:12px 0 0;color:#5b6472;font-size:14.5px">{{ item.detail }}</p>
+            </sc-if>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+
+    <!-- GROUND RULES -->
+    <div style="background:#0a2540;border-radius:24px;padding:clamp(26px,5vw,36px)">
+      <h2 style="font-family:'Heebo',sans-serif;font-weight:800;font-size:20px;color:#fff;margin:0 0 22px;text-align:center">חוקי ההגעה לפגישה &ndash; חשוב לקרוא</h2>
+      <div style="display:flex;flex-direction:column;gap:18px">
+        <div style="display:flex;gap:16px;align-items:flex-start">
+          <div class="rule-icon">💻</div>
+          <div><div style="font-weight:700;font-size:15.5px;color:#fff;margin-bottom:2px">מחשב נייד או נייח בלבד</div><p style="margin:0;color:#c9d3de;font-size:14.5px">לא מהטלפון הנייד ובוודאי שלא תוך כדי נהיגה &ndash; נעבור יחד על מסמכים ומספרים.</p></div>
+        </div>
+        <div style="display:flex;gap:16px;align-items:flex-start">
+          <div class="rule-icon">🤫</div>
+          <div><div style="font-weight:700;font-size:15.5px;color:#fff;margin-bottom:2px">סביבה שקטה, ללא הפרעות</div><p style="margin:0;color:#c9d3de;font-size:14.5px">30 דקות מרוכזות יחסכו לך ולנו זמן ויאפשרו התמקדות מלאה בתוכנית שלך.</p></div>
+        </div>
+        <div style="display:flex;gap:16px;align-items:flex-start">
+          <div class="rule-icon">👫</div>
+          <div><div style="font-weight:700;font-size:15.5px;color:#fff;margin-bottom:2px">נוכחות בן/בת הזוג</div><p style="margin:0;color:#c9d3de;font-size:14.5px">אם יש לכם חשבונות, קופות או נכסים משותפים &ndash; חשוב ששניכם תהיו נוכחים בשיחה.</p></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div style="padding:22px;text-align:center;color:#b7bdc7;font-size:12.5px">&copy; הראל דרור, סוכן ביטוח פיננסי</div>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const ACCORDION_DATA = [
+  { title: 'הטעות שרוב הרופאים לא יודעים שהם עושים', detail: 'למה "עוד ביטוח" לרוב לא הפתרון, ואיך לזהות כפילויות שגורמות לך לשלם פעמיים על אותה הגנה.' },
+  { title: 'איך נראית תוכנית פיננסית שבנויה נכון', detail: 'עקרונות המפת דרכים שבה משתמשים רופאים בכירים שכבר עברו את התהליך.' },
+  { title: 'מה קורה בפגישת האבחון עצמה', detail: 'בדיוק מה לצפות מ-30 הדקות שלנו יחד, ואיך יוצאים ממנה עם תוכנית פעולה ברורה.' }
+];
+
+class Component extends DCLogic {
+  state = { openIndex: 0, params: null };
+
+  componentDidMount() {
+    const sp = new URLSearchParams(window.location.search);
+    this.setState({
+      params: {
+        name: sp.get('name') || ''
+      }
+    });
+  }
+
+  renderVals() {
+    const p = this.state.params || {};
+    const accordionItems = ACCORDION_DATA.map((it, i) => ({
+      title: it.title,
+      detail: it.detail,
+      open: this.state.openIndex === i,
+      chevron: this.state.openIndex === i ? 'rotate(180deg)' : 'rotate(0deg)',
+      toggle: () => this.setState(s => ({ openIndex: s.openIndex === i ? null : i }))
+    }));
+    return {
+      greeting: p.name ? p.name : 'היי',
+      accordionItems
+    };
+  }
+}
+
+</script>
+</body>
+</html>
