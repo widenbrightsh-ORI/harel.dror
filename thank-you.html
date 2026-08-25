@@ -3,6 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>הפרטים התקבלו | הראל דרור</title>
+<meta name="description" content="תודה שנרשמת - הראל דרור ייצור איתך קשר בהקדם לתיאום פגישת האבחון הפיננסי.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230a2540'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%23f5a623'/%3E%3C/svg%3E">
 <script src="./support.js"></script>
 </head>
 <body>
@@ -19,9 +23,22 @@
   .acc-row:hover{background:#f7f5f1}
   .rule-icon{flex:none;width:38px;height:38px;border-radius:10px;background:rgba(245,166,35,.12);color:#f5a623;display:flex;align-items:center;justify-content:center;font-size:18px}
 </style>
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1037068922494926');
+fbq('track', 'PageView');
+</script>
 </helmet>
 
 <div dir="rtl" lang="he" style="font-family:'Assistant',sans-serif;background:#f7f5f1;color:#1c2733;line-height:1.6;min-height:100vh">
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1037068922494926&amp;ev=PageView&amp;noscript=1" alt=""></noscript>
 
   <!-- HEADER -->
   <div style="padding:20px clamp(20px,5vw,52px);display:flex;align-items:center;justify-content:space-between">
@@ -42,7 +59,7 @@
 
     <!-- ACCORDION -->
     <div style="margin-bottom:44px">
-      <h2 style="font-family:'Heebo',sans-serif;font-weight:800;font-size:clamp(20px,3.5vw,25px);color:#0a2540;text-align:center;margin:0 0 20px">מה כדאי לדעת לפני הפגישה</h2>
+      <h2 style="font-family:'Heebo',sans-serif;font-weight:800;font-size:clamp(20px,3.5vw,25px);color:#0a2540;text-align:center;margin:0 0 20px">על מה נעבור בפגישה</h2>
       <div style="background:#fff;border:1px solid #e6e0d4;border-radius:18px;overflow:hidden">
         <sc-for list="{{ accordionItems }}" as="item" hint-placeholder-count="3">
           <div class="acc-row" onClick="{{ item.toggle }}" style="padding:16px 20px;border-bottom:1px solid #eee6d6">
@@ -86,9 +103,9 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 const ACCORDION_DATA = [
-  { title: 'הטעות שרוב הרופאים לא יודעים שהם עושים', detail: 'למה "עוד ביטוח" לרוב לא הפתרון, ואיך לזהות כפילויות שגורמות לך לשלם פעמיים על אותה הגנה.' },
-  { title: 'איך נראית תוכנית פיננסית שבנויה נכון', detail: 'עקרונות המפת דרכים שבה משתמשים רופאים בכירים שכבר עברו את התהליך.' },
-  { title: 'מה קורה בפגישת האבחון עצמה', detail: 'בדיוק מה לצפות מ-30 הדקות שלנו יחד, ואיך יוצאים ממנה עם תוכנית פעולה ברורה.' }
+  { title: 'מיפוי המצב הקיים', detail: 'עוברים יחד על הביטוחים, הפנסיה וקרנות ההשתלמות שלך.' },
+  { title: '"MRI" פיננסי ממוקד', detail: 'מזהים חורים, כפילויות ועמלות מיותרות – בלי לפספס דבר.' },
+  { title: 'תוכנית פעולה ברורה', detail: 'יוצאים עם צעדים מסודרים – בלי התחייבות ובלי עלות.' }
 ];
 
 class Component extends DCLogic {

@@ -3,6 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>הראל דרור | אבחון פיננסי לרופאים בכירים</title>
+<meta name="description" content="אבחון פיננסי אישי וללא עלות לרופאים בכירים - ניקוי כפל ביטוחים, הגדרת עיסוק מדויקת ומעטפת פיננסית מלאה. 24 מקומות בלבד כל חודש.">
+<meta property="og:title" content="הראל דרור | אבחון פיננסי לרופאים בכירים">
+<meta property="og:description" content="אבחון פיננסי אישי וללא עלות לרופאים בכירים - ניקוי כפל ביטוחים, הגדרת עיסוק מדויקת ומעטפת פיננסית מלאה.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="he_IL">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230a2540'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%23f5a623'/%3E%3C/svg%3E">
 <script src="./support.js"></script>
 </head>
 <body>
@@ -17,17 +24,33 @@
   @media (max-width:680px){
     .services-grid{grid-template-columns:1fr !important}
     .stats-bar{grid-template-columns:1fr !important}
-    .float-btn{width:48px !important;height:48px !important;bottom:16px !important}
-    .float-btn.wa{left:16px !important}
-    .float-btn.acc{right:16px !important}
+    .float-btn{width:48px !important;height:48px !important;bottom:16px !important;right:16px !important}
   }
   @keyframes floatBlob{0%,100%{transform:translate(0,0)}50%{transform:translate(-24px,18px)}}
   @keyframes heroUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
   @keyframes spin{to{transform:rotate(360deg)}}
+  .a11y-contrast{filter:invert(1) hue-rotate(180deg)}
+  .a11y-contrast img,.a11y-contrast image-slot{filter:invert(1) hue-rotate(180deg)}
+  .a11y-underline a{text-decoration:underline !important}
 </style>
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1037068922494926');
+fbq('track', 'PageView');
+</script>
 </helmet>
 
 <div dir="rtl" lang="he" style="font-family:'Assistant',sans-serif;background:#f7f5f1;color:#1c2733;line-height:1.65;overflow-x:hidden">
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1037068922494926&amp;ev=PageView&amp;noscript=1" alt=""></noscript>
+
+  <div class="{{ a11yClasses }}" style="zoom:{{ a11yZoomPct }}%">
 
   <!-- HERO -->
   <section style="background:linear-gradient(150deg,#0a2540,#0f3a5f 60%,#123a5e);padding:clamp(64px,10vw,110px) clamp(20px,5vw,52px) 0">
@@ -41,20 +64,40 @@
         <span style="background:rgba(10,37,64,.15);font-size:12px;font-weight:700;padding:4px 12px;border-radius:999px">24 מקומות בלבד כל חודש</span>
       </a>
 
-      <div style="position:relative;aspect-ratio:16/9;max-width:680px;width:100%;border-radius:24px;overflow:hidden;animation:heroUp .8s .22s cubic-bezier(.16,1,.3,1) both">
-        <image-slot id="hero-vsl-poster" shape="rect" style="width:100%;height:100%" placeholder="פוסטר לסרטון VSL" src="./assets/harel-photo-1.jpg"></image-slot>
-        <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,37,64,.05),rgba(10,37,64,.55));pointer-events:none"></div>
-        <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;pointer-events:none">
-          <div style="width:64px;height:64px;border-radius:50%;background:#f5a623;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(0,0,0,.35)">
-            <div style="width:0;height:0;border-top:12px solid transparent;border-bottom:12px solid transparent;border-left:19px solid #0a2540;margin-left:-3px"></div>
-          </div>
-          <div style="color:#fff;font-size:13.5px;font-weight:700;background:rgba(10,37,64,.5);padding:6px 14px;border-radius:999px">סרטון VSL - בקרוב</div>
-        </div>
-      </div>
-
       <p style="font-size:clamp(16px,3vw,18.5px);color:#c9d3de;max-width:600px;margin:0;animation:heroUp .7s .28s cubic-bezier(.16,1,.3,1) both">
         גלו איך רופאים בכירים עושים סדר בכפל הביטוחים מול הר"י וקופות החולים, מגינים על הידיים שלהם בהגדרת עיסוק ספציפית, ומפסיקים לתת לכסף שלהם להישחק בעו"ש - באפס התעסקות בירוקרטית מצדם.
       </p>
+
+      <div id="form" style="width:100%;max-width:480px;animation:heroUp .8s .22s cubic-bezier(.16,1,.3,1) both">
+        <sc-if value="{{ !submitted }}" hint-placeholder-val="{{ true }}">
+          <form style="background:#fff;border-radius:24px;padding:28px;display:flex;flex-direction:column;gap:14px;text-align:right;box-shadow:0 20px 50px rgba(0,0,0,.3)" onSubmit="{{ handleSubmit }}">
+            <div>
+              <label style="display:block;font-size:13.5px;font-weight:700;color:#0a2540;margin-bottom:6px">שם מלא</label>
+              <input required="" type="text" name="name" autocomplete="name" value="{{ name }}" onChange="{{ setName }}" style="width:100%;box-sizing:border-box;padding:13px 14px;border:1px solid #d8d4c9;border-radius:12px;font-size:16px;font-family:Assistant,sans-serif">
+            </div>
+            <div>
+              <label style="display:block;font-size:13.5px;font-weight:700;color:#0a2540;margin-bottom:6px">טלפון</label>
+              <input required="" type="tel" name="tel" autocomplete="tel" value="{{ phone }}" onChange="{{ setPhone }}" style="width:100%;box-sizing:border-box;padding:13px 14px;border:1px solid #d8d4c9;border-radius:12px;font-size:16px;font-family:Assistant,sans-serif">
+            </div>
+            <div>
+              <label style="display:block;font-size:13.5px;font-weight:700;color:#0a2540;margin-bottom:6px">אימייל</label>
+              <input required="" type="email" name="email" autocomplete="email" value="{{ email }}" onChange="{{ setEmail }}" style="width:100%;box-sizing:border-box;padding:13px 14px;border:1px solid #d8d4c9;border-radius:12px;font-size:16px;font-family:Assistant,sans-serif">
+            </div>
+            <label style="display:flex;align-items:flex-start;gap:10px;font-size:13px;color:#3c4552;cursor:pointer;text-align:right">
+              <input required="" type="checkbox" checked="{{ privacyAccepted }}" onChange="{{ setPrivacyAccepted }}" style="margin-top:3px;flex:none">
+              <span>מאשר/ת את <a href="./privacy-policy.html" target="_blank" rel="noopener" style="color:#0a2540;font-weight:700;text-decoration:underline">מדיניות הפרטיות</a></span>
+            </label>
+            <button type="submit" style="margin-top:4px;background:#f5a623;color:#0a2540;font-weight:800;font-size:17px;padding:16px;border:none;border-radius:12px;cursor:pointer;font-family:'Heebo',sans-serif;transition:transform .2s ease,box-shadow .2s ease" style-hover="transform:scale(1.015);box-shadow:0 10px 24px rgba(245,166,35,.4)">הגש מועמדות ושריין לי מקום באבחון הפיננסי עכשיו!</button>
+          </form>
+        </sc-if>
+        <sc-if value="{{ submitted }}" hint-placeholder-val="{{ false }}">
+          <div style="background:#fff;border-radius:24px;padding:40px 28px;text-align:center">
+            <div style="width:44px;height:44px;border-radius:50%;border:4px solid #e6e0d4;border-top-color:#f5a623;margin:0 auto 18px;animation:spin .9s linear infinite"></div>
+            <div style="font-family:'Heebo',sans-serif;font-weight:700;font-size:20px;color:#0a2540;margin-bottom:10px">הפרטים התקבלו!</div>
+            <p style="color:#5b6472;margin:0;font-size:14.5px">מעביר אותך לשאלון בדיקת התאמה (60 שניות) כדי להתאים לך את פגישת האבחון&hellip;</p>
+          </div>
+        </sc-if>
+      </div>
     </div>
     <div style="height:clamp(56px,10vw,90px)"></div>
   </section>
@@ -223,60 +266,32 @@
     <div style="position:absolute;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.15),transparent 70%);filter:blur(40px);bottom:-60px;left:-40px;animation:floatBlob 14s ease-in-out infinite reverse"></div>
     <div data-reveal="testimonials" style="position:relative;max-width:760px;margin:0 auto;{{ testimonialsReveal }}">
       <div style="font-family:'Heebo',sans-serif;font-weight:900;font-size:15px;color:#f5a623;letter-spacing:1px;margin-bottom:16px;text-align:center">05 / הוכחה חברתית</div>
-      <h2 style="font-family:'Heebo',sans-serif;font-weight:800;font-size:clamp(22px,4vw,30px);color:#fff;text-align:center;margin:0 0 44px">מה הרופאים שלנו אומרים?</h2>
+      <h2 style="font-family:'Heebo',sans-serif;font-weight:800;font-size:clamp(22px,4vw,30px);color:#fff;text-align:center;margin:0 0 44px">מה הלקוחות שלנו אומרים?</h2>
 
-      <div style="overflow:hidden;border-radius:24px">
+      <div style="overflow:hidden;border-radius:24px" onTouchStart="{{ testimonialTouchStart }}" onTouchEnd="{{ testimonialTouchEnd }}">
         <div style="display:flex;transition:transform .6s cubic-bezier(.16,1,.3,1);transform:translateX({{ testimonialOffset }}%)">
-          <div style="flex:0 0 100%;box-sizing:border-box;padding:2px">
-            <div style="background:rgba(255,255,255,.08);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.18);border-radius:24px;padding:38px">
-              <div style="color:#f5a623;font-size:18px;letter-spacing:3px;margin-bottom:16px">★★★★★</div>
-              <p style="font-size:18px;color:#fff;margin:0 0 26px">הראל עוטף אותנו מכל כיוון. אין לנו מילה רעה להגיד עליו. זה נותן תחושת אמינות ותחושה שאתה בידיים טובות שאתה אצל איש מקצוע אמיתי.</p>
-              <div style="display:flex;align-items:center;gap:12px">
-                <image-slot id="doctor-anat" shape="circle" style="width:52px;height:52px" placeholder="תמונה"></image-slot>
-                <span style="font-weight:700;color:#fff;font-family:'Heebo',sans-serif">ד"ר ענת</span>
+          <sc-for list="{{ testimonials }}" as="t" hint-placeholder-count="12">
+            <div style="flex:0 0 100%;box-sizing:border-box;padding:2px">
+              <div style="background:rgba(255,255,255,.08);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.18);border-radius:24px;padding:38px">
+                <div style="color:#f5a623;font-size:18px;letter-spacing:3px;margin-bottom:16px">★★★★★</div>
+                <p style="font-size:18px;color:#fff;margin:0 0 26px">{{ t.quote }}</p>
+                <div style="display:flex;align-items:center;gap:12px">
+                  <span style="font-weight:700;color:#fff;font-family:'Heebo',sans-serif">{{ t.name }}</span>
+                </div>
               </div>
             </div>
-          </div>
-          <div style="flex:0 0 100%;box-sizing:border-box;padding:2px">
-            <div style="background:rgba(255,255,255,.08);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.18);border-radius:24px;padding:38px">
-              <div style="color:#f5a623;font-size:18px;letter-spacing:3px;margin-bottom:16px">★★★★★</div>
-              <p style="font-size:18px;color:#fff;margin:0 0 26px">היום הוא סוכן בחסד עליון וחבר משפחה. אין לי יותר את החיכוך מול חברת הביטוח, הוא מגיש הכל בעצמו. הכל הרבה יותר פשוט, נגיש וברור. הוריד מאיתנו את כל ההתעסקות.</p>
-              <div style="display:flex;align-items:center;gap:12px">
-                <image-slot id="doctor-noam" shape="circle" style="width:52px;height:52px" placeholder="תמונה"></image-slot>
-                <span style="font-weight:700;color:#fff;font-family:'Heebo',sans-serif">ד"ר נועם</span>
-              </div>
-            </div>
-          </div>
+          </sc-for>
         </div>
       </div>
 
       <div style="display:flex;justify-content:center;align-items:center;gap:20px;margin-top:26px">
         <button onClick="{{ prevTestimonial }}" style="background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);color:#fff;width:38px;height:38px;border-radius:50%;cursor:pointer;font-size:16px" aria-label="הקודם">›</button>
         <div style="display:flex;gap:8px">
-          <span style="width:8px;height:8px;border-radius:50%;background:{{ dot0 }}"></span>
-          <span style="width:8px;height:8px;border-radius:50%;background:{{ dot1 }}"></span>
+          <sc-for list="{{ testimonialDots }}" as="d" hint-placeholder-count="12">
+            <span style="width:8px;height:8px;border-radius:50%;background:{{ d.color }}"></span>
+          </sc-for>
         </div>
         <button onClick="{{ nextTestimonial }}" style="background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);color:#fff;width:38px;height:38px;border-radius:50%;cursor:pointer;font-size:16px" aria-label="הבא">‹</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- WALL OF LOVE -->
-  <section style="padding:clamp(64px,10vw,120px) clamp(20px,5vw,52px);background:#f7f5f1">
-    <div data-reveal="wall" style="max-width:1180px;margin:0 auto;{{ wallReveal }}">
-      <div style="text-align:center;margin-bottom:48px">
-        <div style="font-family:'Heebo',sans-serif;font-weight:900;font-size:15px;color:#c8862e;letter-spacing:1px;margin-bottom:14px">קיר האהבה</div>
-        <h2 style="font-family:'Heebo',sans-serif;font-weight:800;font-size:clamp(24px,4.5vw,32px);color:#0a2540;margin:0">לקוחות מספרים - כמו שהם כתבו לי בוואטסאפ</h2>
-      </div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:20px">
-        <image-slot id="wa-screenshot-1" shape="rounded" radius="20" style="aspect-ratio:9/16" placeholder="צילום מסך וואטסאפ"></image-slot>
-        <image-slot id="wa-screenshot-2" shape="rounded" radius="20" style="aspect-ratio:9/16" placeholder="צילום מסך וואטסאפ"></image-slot>
-        <image-slot id="wa-screenshot-3" shape="rounded" radius="20" style="aspect-ratio:9/16" placeholder="צילום מסך וואטסאפ"></image-slot>
-        <image-slot id="wa-screenshot-4" shape="rounded" radius="20" style="aspect-ratio:9/16" placeholder="צילום מסך וואטסאפ"></image-slot>
-        <image-slot id="wa-screenshot-5" shape="rounded" radius="20" style="aspect-ratio:9/16" placeholder="צילום מסך וואטסאפ"></image-slot>
-        <image-slot id="wa-screenshot-6" shape="rounded" radius="20" style="aspect-ratio:9/16" placeholder="צילום מסך וואטסאפ"></image-slot>
-        <image-slot id="wa-screenshot-7" shape="rounded" radius="20" style="aspect-ratio:9/16" placeholder="צילום מסך וואטסאפ"></image-slot>
-        <image-slot id="wa-screenshot-8" shape="rounded" radius="20" style="aspect-ratio:9/16" placeholder="צילום מסך וואטסאפ"></image-slot>
       </div>
     </div>
   </section>
@@ -284,7 +299,7 @@
   <!-- FOUNDER -->
   <section style="padding:clamp(64px,10vw,120px) clamp(20px,5vw,52px);background:#0a2540">
     <div data-reveal="founder" style="max-width:1080px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(32px,6vw,64px);align-items:center;{{ founderReveal }}">
-      <div style="aspect-ratio:1/1;max-width:380px;width:100%;border-radius:28px;overflow:hidden;order:2">
+      <div style="aspect-ratio:1/1;max-width:380px;width:100%;border-radius:50%;overflow:hidden;order:2">
         <image-slot id="founder-photo" shape="rect" style="width:100%;height:100%" placeholder="תמונת הראל דרור" src="./assets/harel-photo-2.jpg"></image-slot>
       </div>
       <div style="order:1">
@@ -296,88 +311,86 @@
     </div>
   </section>
 
-  <!-- FINAL CTA + FORM -->
-  <section id="form" style="padding:clamp(64px,10vw,120px) clamp(20px,5vw,52px) clamp(64px,10vw,130px);background:#f7f5f1">
+  <!-- FINAL CTA -->
+  <section style="padding:clamp(64px,10vw,120px) clamp(20px,5vw,52px) clamp(64px,10vw,130px);background:#f7f5f1">
     <div data-reveal="form" style="max-width:600px;margin:0 auto;text-align:center;{{ formReveal }}">
       <div style="font-family:'Heebo',sans-serif;font-weight:900;font-size:15px;color:#c8862e;letter-spacing:1px;margin-bottom:16px">06 / ההצעה</div>
       <h2 style="font-family:'Heebo',sans-serif;font-weight:900;font-size:clamp(24px,4.5vw,30px);color:#0a2540;margin:0 0 22px">הכדור בידיים שלכם</h2>
       <p style="font-size:16px;color:#5b6472;margin:0 0 16px">התיק הפיננסי שלכם מורכב מכדי להשאיר אותו לברירות מחדל. לכן, אני מזמין אתכם להגיש מועמדות לאבחון פיננסי בזום של 30 דקות בלבד.</p>
       <p style="font-size:16px;color:#5b6472;margin:0 0 16px">ב-30 דקות האלו, אנחנו נעשה אבחון לתיק שלכם ונבין בדיוק איפה אתם חשופים ואיפה אפשר לייצר לכם עוד כסף.</p>
-      <p style="font-size:15px;color:#c8862e;font-weight:700;margin:0 0 24px">⏳ שימו לב: מספר המקומות מוגבל! מכיוון שאני מעניק שירות בוטיק אישי ועובד מולכם ישירות (ולא מעביר אתכם למוקדנים), אני פותח בכל חודש רק 24 מקומות בלבד לשיחות אבחון.</p>
-      <sc-if value="{{ !submitted }}" hint-placeholder-val="{{ true }}">
-        <form style="background:#fff;border:1px solid #e6e0d4;border-radius:24px;padding:36px;display:flex;flex-direction:column;gap:16px;text-align:right" onSubmit="{{ handleSubmit }}">
-          <div>
-            <label style="display:block;font-size:13.5px;font-weight:700;color:#0a2540;margin-bottom:6px">שם מלא</label>
-            <input required="" type="text" value="{{ name }}" onChange="{{ setName }}" style="width:100%;box-sizing:border-box;padding:13px 14px;border:1px solid #d8d4c9;border-radius:12px;font-size:16px;font-family:Assistant,sans-serif">
-          </div>
-          <div>
-            <label style="display:block;font-size:13.5px;font-weight:700;color:#0a2540;margin-bottom:6px">טלפון</label>
-            <input required="" type="tel" value="{{ phone }}" onChange="{{ setPhone }}" style="width:100%;box-sizing:border-box;padding:13px 14px;border:1px solid #d8d4c9;border-radius:12px;font-size:16px;font-family:Assistant,sans-serif">
-          </div>
-          <div>
-            <label style="display:block;font-size:13.5px;font-weight:700;color:#0a2540;margin-bottom:6px">אימייל</label>
-            <input required="" type="email" value="{{ email }}" onChange="{{ setEmail }}" style="width:100%;box-sizing:border-box;padding:13px 14px;border:1px solid #d8d4c9;border-radius:12px;font-size:16px;font-family:Assistant,sans-serif">
-          </div>
-          <label style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#3c4552;cursor:pointer;text-align:right">
-            <input required="" type="checkbox" checked="{{ privacyAccepted }}" onChange="{{ setPrivacyAccepted }}" style="margin-top:3px;flex:none">
-            <span>מאשר/ת את <a href="#" style="color:#0a2540;font-weight:700;text-decoration:underline">מדיניות הפרטיות</a></span>
-          </label>
-          <button type="submit" style="margin-top:8px;background:#f5a623;color:#0a2540;font-weight:800;font-size:17px;padding:16px;border:none;border-radius:999px;cursor:pointer;font-family:'Heebo',sans-serif;transition:transform .2s ease,box-shadow .2s ease" style-hover="transform:scale(1.015);box-shadow:0 10px 24px rgba(245,166,35,.4)">הגש מועמדות ושריין לי מקום באבחון הפיננסי עכשיו!</button>
-        </form>
-      </sc-if>
-      <sc-if value="{{ submitted }}" hint-placeholder-val="{{ false }}">
-        <div style="background:#fff;border:1px solid #e6e0d4;border-radius:24px;padding:48px 36px">
-          <div style="width:44px;height:44px;border-radius:50%;border:4px solid #e6e0d4;border-top-color:#f5a623;margin:0 auto 18px;animation:spin .9s linear infinite"></div>
-          <div style="font-family:'Heebo',sans-serif;font-weight:700;font-size:22px;color:#0a2540;margin-bottom:10px">הפרטים התקבלו!</div>
-          <p style="color:#5b6472;margin:0">מעביר אותך לשאלון סינון קצר (60 שניות) כדי להתאים לך את פגישת האבחון&hellip;</p>
-        </div>
-      </sc-if>
+      <p style="font-size:15px;color:#c8862e;font-weight:700;margin:0 0 30px">⏳ שימו לב: מספר המקומות מוגבל! מכיוון שאני מעניק שירות בוטיק אישי ועובד מולכם ישירות (ולא מעביר אתכם למוקדנים), אני פותח בכל חודש רק 24 מקומות בלבד לשיחות אבחון.</p>
+      <a href="#form" style="display:inline-flex;align-items:center;gap:10px;background:#f5a623;color:#0a2540;font-weight:800;font-size:17px;padding:16px 32px;border-radius:999px;text-decoration:none;transition:transform .2s ease,box-shadow .2s ease" style-hover="transform:scale(1.015);box-shadow:0 10px 24px rgba(245,166,35,.4)">הגש מועמדות ושריין לי מקום ↑</a>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer style="background:#0a2540;padding:56px clamp(20px,5vw,52px) 32px;color:#c9d3de;text-align:center">
-    <image-slot id="brand-logo" shape="rect" style="width:160px;height:44px;margin:0 auto 14px;display:block" placeholder="לוגו הראל דרור"></image-slot>
-    <div style="display:flex;align-items:center;justify-content:center;gap:8px;font-size:14.5px;color:#9fb0c2;margin-bottom:22px">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#f5a623" stroke-width="2"><path d="M12 22s7-7.5 7-13a7 7 0 1 0-14 0c0 5.5 7 13 7 13z"></path><circle cx="12" cy="9" r="2.5"></circle></svg>
-      תל אביב, ישראל
-    </div>
+    <div style="font-family:'Heebo',sans-serif;font-weight:800;font-size:20px;color:#fff;margin-bottom:22px">הראל דרור</div>
     <div style="display:flex;justify-content:center;gap:24px;font-size:14px;margin-bottom:26px">
-      <a href="#" style="color:#c9d3de;text-decoration:none" style-hover="color:#f5a623">נגישות</a>
-      <a href="#" style="color:#c9d3de;text-decoration:none" style-hover="color:#f5a623">תקנון</a>
-      <a href="#" style="color:#c9d3de;text-decoration:none" style-hover="color:#f5a623">פרטיות</a>
-    </div>
-    <div style="display:flex;justify-content:center;gap:14px;margin-bottom:8px">
-      <a href="#" style="width:36px;height:36px;border-radius:50%;border:1px solid rgba(245,166,35,.4);display:flex;align-items:center;justify-content:center;color:#f5a623;text-decoration:none;font-size:14px">f</a>
-      <a href="#" style="width:36px;height:36px;border-radius:50%;border:1px solid rgba(245,166,35,.4);display:flex;align-items:center;justify-content:center;color:#f5a623;text-decoration:none;font-size:14px">in</a>
-      <a href="#" style="width:36px;height:36px;border-radius:50%;border:1px solid rgba(245,166,35,.4);display:flex;align-items:center;justify-content:center;color:#f5a623;text-decoration:none;font-size:14px">@</a>
+      <a href="#" onClick="{{ a11yLinkClick }}" style="color:#c9d3de;text-decoration:none" style-hover="color:#f5a623">נגישות</a>
+      <a href="./privacy-policy.html" target="_blank" rel="noopener" style="color:#c9d3de;text-decoration:none" style-hover="color:#f5a623">פרטיות</a>
     </div>
     <div style="height:1px;background:rgba(245,166,35,.25);max-width:200px;margin:22px auto"></div>
-    <div style="display:flex;justify-content:center;gap:22px;flex-wrap:wrap;opacity:.7;margin-bottom:22px">
-      <image-slot id="partner-1" shape="rect" style="width:90px;height:32px" placeholder="לוגו שותף"></image-slot>
-      <image-slot id="partner-2" shape="rect" style="width:90px;height:32px" placeholder="לוגו שותף"></image-slot>
-      <image-slot id="partner-3" shape="rect" style="width:90px;height:32px" placeholder="לוגו שותף"></image-slot>
-      <image-slot id="partner-4" shape="rect" style="width:90px;height:32px" placeholder="לוגו שותף"></image-slot>
-    </div>
     <div style="font-size:12.5px;color:#7488a0">© הראל דרור, סוכן ביטוח - כל הזכויות שמורות</div>
   </footer>
 
-  <!-- FLOATING BUTTONS -->
-  <a href="https://wa.me/" target="_blank" class="float-btn wa" style="position:fixed;bottom:24px;left:24px;width:56px;height:56px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(0,0,0,.25);z-index:70;text-decoration:none;transition:transform .2s ease" style-hover="transform:scale(1.08)" aria-label="וואטסאפ">
-    <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.3A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20zm4.4-5.9c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1s-.6.8-.8 1c-.1.1-.3.2-.5.1-1.6-.7-2.6-1.3-3.6-3-.1-.2-.1-.3.1-.5.2-.2.5-.5.6-.6.1-.1.1-.3 0-.5-.1-.2-.6-1.4-.8-1.9-.2-.5-.4-.4-.5-.4h-.5c-.2 0-.5.1-.7.3-.2.2-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.8 2.8 4.4 3.8 2.1.8 2.5.6 2.9.6.4 0 1.4-.6 1.6-1.1.2-.5.2-1 .1-1.1-.1-.1-.2-.2-.4-.3z"></path></svg>
-  </a>
-  <button class="float-btn acc" style="position:fixed;bottom:24px;right:24px;width:56px;height:56px;border-radius:50%;background:#0a2540;border:2px solid #f5a623;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(0,0,0,.25);z-index:70;cursor:pointer;transition:transform .2s ease" style-hover="transform:scale(1.08)" aria-label="נגישות">
+  </div>
+
+  <!-- ACCESSIBILITY -->
+  <sc-if value="{{ a11yOpen }}" hint-placeholder-val="{{ false }}">
+    <div dir="rtl" style="position:fixed;bottom:90px;right:24px;z-index:80;background:#fff;border-radius:16px;box-shadow:0 16px 40px rgba(0,0,0,.28);padding:16px;width:220px;text-align:right;font-family:'Assistant',sans-serif">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
+        <span style="font-family:'Heebo',sans-serif;font-weight:800;font-size:14.5px;color:#0a2540">נגישות</span>
+        <button onClick="{{ a11yToggleOpen }}" aria-label="סגירת תפריט נגישות" style="background:none;border:none;cursor:pointer;font-size:18px;line-height:1;color:#8a93a3;padding:0">×</button>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <button onClick="{{ a11yZoomIn }}" style="text-align:right;background:#f7f5f1;border:none;border-radius:10px;padding:10px 12px;font-size:14px;color:#0a2540;cursor:pointer;font-family:Assistant,sans-serif">א+ הגדלת טקסט</button>
+        <button onClick="{{ a11yZoomOut }}" style="text-align:right;background:#f7f5f1;border:none;border-radius:10px;padding:10px 12px;font-size:14px;color:#0a2540;cursor:pointer;font-family:Assistant,sans-serif">א- הקטנת טקסט</button>
+        <button onClick="{{ a11yToggleContrast }}" style="text-align:right;background:{{ contrastBg }};border:none;border-radius:10px;padding:10px 12px;font-size:14px;color:#0a2540;cursor:pointer;font-family:Assistant,sans-serif">ניגודיות גבוהה{{ contrastMark }}</button>
+        <button onClick="{{ a11yToggleUnderline }}" style="text-align:right;background:{{ underlineBg }};border:none;border-radius:10px;padding:10px 12px;font-size:14px;color:#0a2540;cursor:pointer;font-family:Assistant,sans-serif">הדגשת קישורים{{ underlineMark }}</button>
+        <button onClick="{{ a11yReset }}" style="text-align:right;background:transparent;border:1px solid #e6e0d4;border-radius:10px;padding:10px 12px;font-size:14px;color:#5b6472;cursor:pointer;font-family:Assistant,sans-serif">איפוס הגדרות</button>
+      </div>
+    </div>
+  </sc-if>
+  <button class="float-btn acc" onClick="{{ a11yToggleOpen }}" style="position:fixed;bottom:24px;right:24px;width:56px;height:56px;border-radius:50%;background:#0a2540;border:2px solid #f5a623;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(0,0,0,.25);z-index:70;cursor:pointer;transition:transform .2s ease" style-hover="transform:scale(1.08)" aria-label="פתיחת תפריט נגישות">
     <svg width="26" height="26" viewBox="0 0 24 24" fill="#f5a623"><circle cx="12" cy="4" r="2"></circle><path d="M4 8l8 1.5L20 8v2l-6.5 1v3l3 7-2 1-2.5-6-2.5 6-2-1 3-7v-3L4 10z"></path></svg>
   </button>
 
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script>
+const WEBHOOK_URL = 'https://hook.eu2.make.com/v2sexopqqpvgt7plto1bjpxm4sg08mjg';
+function sendWebhook(payload) {
+  try {
+    fetch(WEBHOOK_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    }).catch(() => {});
+  } catch (e) {}
+}
+
+const TESTIMONIALS = [
+  { name: 'ד"ר ענת', quote: 'הראל עוטף אותנו מכל כיוון. אין לנו מילה רעה להגיד עליו. זה נותן תחושת אמינות ותחושה שאתה בידיים טובות שאתה אצל איש מקצוע אמיתי.' },
+  { name: 'ד"ר נועם', quote: 'היום הוא סוכן בחסד עליון וחבר משפחה. אין לי יותר את החיכוך מול חברת הביטוח, הוא מגיש הכל בעצמו. הכל הרבה יותר פשוט, נגיש וברור. הוריד מאיתנו את כל ההתעסקות.' },
+  { name: 'ד"ר יפית', quote: 'רק רציתי להגיד לך שאתה פשוט קוסם. היה לי שבוע מטורף, והידיעה שלקחת את כל הניירת, הגשת את כל הטפסים לחברות הביטוח ועשית 100% מהעבודה בשבילי - זה שווה זהב. תודה!' },
+  { name: 'ד"ר יאיר', quote: 'אין לי מושג איך יש לך סבלנות אליי... אמרתי ננסה לבד, איך הצלחת לסגור לי את הפינה ב-5 דקות?! אין שירות כזה בארץ, באמת.' },
+  { name: 'גל', quote: 'לא צריך לרדוף אחריו. זה נשמע בסיסי אבל אחרי הסוכן הקודם זה עולם אחר.' },
+  { name: 'אורן', quote: 'היו לי ארבע קרנות שלא ידעתי עליהן. הוא איחד הכל ופתאום אני מבין מה יש לי.' },
+  { name: 'אסי', quote: 'יצאתי מהפגישה עם דף אחד שמסביר את כל התיק. עד אז זה היה ערפל.' },
+  { name: 'דביר', quote: 'הוא התקשר אליי לפני שידעתי שיש בעיה. זה מה שהבדיל אותו.' },
+  { name: 'הילה', quote: 'הוא עובר על התיק שלי גם אם לא דיברנו. אני לא צריך לזכור כלום.' },
+  { name: 'שי', quote: 'עברתי שלושה סוכנים לפניו. כולם מכרו לי, הוא הראשון שקודם שאל.' },
+  { name: 'עינת', quote: 'חשבתי שכולם אותו דבר. טעיתי.' },
+  { name: 'יונתן', quote: 'הוא הסביר לי בסבלנות בלי מונחים. בפעם הראשונה הבנתי מה אני קונה.' }
+];
+
 class Component extends DCLogic {
   state = {
     name: '', phone: '', email: '', privacyAccepted: false, submitted: false, visible: {},
     statsCounted: false, statMinutes: 0, statCost: 0, statSpots: 0,
-    testimonialIndex: 0, wordIndex: 0, wordFading: false
+    testimonialIndex: 0, wordIndex: 0, wordFading: false,
+    a11yOpen: false, a11yZoom: 100, a11yContrast: false, a11yUnderline: false
   };
 
   heroWords = ['חברות ביטוח', 'קרן הפנסיה', 'תיק ההשקעות שלהם'];
@@ -396,12 +409,21 @@ class Component extends DCLogic {
       if (upd.stats && !this.state.statsCounted) this.runCounters();
     }, { threshold: 0.12 });
     document.querySelectorAll('[data-reveal]').forEach(el => this.observer.observe(el));
+    this.restartTestimonialAutoplay();
   }
 
   componentWillUnmount() {
     if (this.observer) this.observer.disconnect();
     if (this.counterInterval) clearInterval(this.counterInterval);
     if (this.wordTimer) clearInterval(this.wordTimer);
+    if (this.testimonialTimer) clearInterval(this.testimonialTimer);
+  }
+
+  restartTestimonialAutoplay() {
+    if (this.testimonialTimer) clearInterval(this.testimonialTimer);
+    this.testimonialTimer = setInterval(() => {
+      this.setState(s => ({ testimonialIndex: (s.testimonialIndex + 1) % TESTIMONIALS.length }));
+    }, 4000);
   }
 
   runCounters() {
@@ -441,6 +463,15 @@ class Component extends DCLogic {
         e.preventDefault();
         if (!this.state.privacyAccepted) return;
         this.setState({ submitted: true });
+        sendWebhook({
+          event: 'lead_captured',
+          name: this.state.name,
+          phone: this.state.phone,
+          email: this.state.email,
+          page: 'landing',
+          ts: new Date().toISOString()
+        });
+        if (typeof fbq === 'function') fbq('track', 'Lead');
         const params = new URLSearchParams({
           name: this.state.name,
           phone: this.state.phone,
@@ -450,10 +481,23 @@ class Component extends DCLogic {
           window.location.href = './survey.html?' + params.toString();
         }, 900);
       },
+      a11yOpen: this.state.a11yOpen,
+      a11yZoomPct: this.state.a11yZoom,
+      a11yClasses: [this.state.a11yContrast ? 'a11y-contrast' : '', this.state.a11yUnderline ? 'a11y-underline' : ''].filter(Boolean).join(' '),
+      contrastMark: this.state.a11yContrast ? ' ✓' : '',
+      underlineMark: this.state.a11yUnderline ? ' ✓' : '',
+      contrastBg: this.state.a11yContrast ? '#f5e3c3' : '#f7f5f1',
+      underlineBg: this.state.a11yUnderline ? '#f5e3c3' : '#f7f5f1',
+      a11yToggleOpen: () => this.setState(s => ({ a11yOpen: !s.a11yOpen })),
+      a11yLinkClick: e => { e.preventDefault(); this.setState(s => ({ a11yOpen: !s.a11yOpen })); },
+      a11yZoomIn: () => this.setState(s => ({ a11yZoom: Math.min(150, s.a11yZoom + 10) })),
+      a11yZoomOut: () => this.setState(s => ({ a11yZoom: Math.max(80, s.a11yZoom - 10) })),
+      a11yToggleContrast: () => this.setState(s => ({ a11yContrast: !s.a11yContrast })),
+      a11yToggleUnderline: () => this.setState(s => ({ a11yUnderline: !s.a11yUnderline })),
+      a11yReset: () => this.setState({ a11yZoom: 100, a11yContrast: false, a11yUnderline: false }),
       statsReveal: this.reveal('stats'),
       painReveal: this.reveal('pain'),
       qualifierReveal: this.reveal('qualifier'),
-      wallReveal: this.reveal('wall'),
       servicesReveal: this.reveal('services'),
       processReveal: this.reveal('process'),
       testimonialsReveal: this.reveal('testimonials'),
@@ -464,11 +508,32 @@ class Component extends DCLogic {
       statSpots: this.state.statSpots,
       currentWord: this.heroWords[this.state.wordIndex],
       wordStyle: `opacity:${this.state.wordFading ? 0 : 1};transform:translateY(${this.state.wordFading ? 10 : 0}px);transition:opacity .5s cubic-bezier(.4,0,.2,1),transform .5s cubic-bezier(.4,0,.2,1)`,
-      testimonialOffset: this.state.testimonialIndex * -100,
-      dot0: this.state.testimonialIndex === 0 ? '#f5a623' : 'rgba(255,255,255,.3)',
-      dot1: this.state.testimonialIndex === 1 ? '#f5a623' : 'rgba(255,255,255,.3)',
-      prevTestimonial: () => this.setState(s => ({ testimonialIndex: s.testimonialIndex === 0 ? 1 : 0 })),
-      nextTestimonial: () => this.setState(s => ({ testimonialIndex: s.testimonialIndex === 0 ? 1 : 0 }))
+      testimonials: TESTIMONIALS.map(t => ({ name: t.name, quote: t.quote })),
+      testimonialOffset: this.state.testimonialIndex * 100,
+      testimonialDots: TESTIMONIALS.map((_, i) => ({
+        color: i === this.state.testimonialIndex ? '#f5a623' : 'rgba(255,255,255,.3)'
+      })),
+      prevTestimonial: () => {
+        this.setState(s => ({ testimonialIndex: (s.testimonialIndex - 1 + TESTIMONIALS.length) % TESTIMONIALS.length }));
+        this.restartTestimonialAutoplay();
+      },
+      nextTestimonial: () => {
+        this.setState(s => ({ testimonialIndex: (s.testimonialIndex + 1) % TESTIMONIALS.length }));
+        this.restartTestimonialAutoplay();
+      },
+      testimonialTouchStart: e => { this._touchStartX = e.touches[0].clientX; },
+      testimonialTouchEnd: e => {
+        if (this._touchStartX == null) return;
+        const dx = e.changedTouches[0].clientX - this._touchStartX;
+        this._touchStartX = null;
+        if (Math.abs(dx) < 40) return;
+        if (dx < 0) {
+          this.setState(s => ({ testimonialIndex: (s.testimonialIndex + 1) % TESTIMONIALS.length }));
+        } else {
+          this.setState(s => ({ testimonialIndex: (s.testimonialIndex - 1 + TESTIMONIALS.length) % TESTIMONIALS.length }));
+        }
+        this.restartTestimonialAutoplay();
+      }
     };
   }
 }

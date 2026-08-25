@@ -3,6 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>בדיקת התאמה | הראל דרור</title>
+<meta name="description" content="שאלון קצר של 60 שניות לבדיקת התאמה לאבחון פיננסי אישי עם הראל דרור.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230a2540'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%23f5a623'/%3E%3C/svg%3E">
 <script src="./support.js"></script>
 </head>
 <body>
@@ -21,9 +25,22 @@
   @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
   @keyframes pulseDot{0%,100%{opacity:.3}50%{opacity:1}}
 </style>
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1037068922494926');
+fbq('track', 'PageView');
+</script>
 </helmet>
 
 <div dir="rtl" lang="he" style="font-family:'Assistant',sans-serif;background:#f7f5f1;color:#1c2733;line-height:1.6;min-height:100vh;display:flex;flex-direction:column">
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1037068922494926&amp;ev=PageView&amp;noscript=1" alt=""></noscript>
 
   <!-- MINIMAL HEADER -->
   <div style="padding:20px clamp(20px,5vw,52px);display:flex;align-items:center;justify-content:space-between">
@@ -166,6 +183,34 @@
 
 </x-dc>
 <script type="text/x-dc" data-dc-script>
+const WEBHOOK_URL = 'https://hook.eu2.make.com/v2sexopqqpvgt7plto1bjpxm4sg08mjg';
+function sendWebhook(payload) {
+  try {
+    fetch(WEBHOOK_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    }).catch(() => {});
+  } catch (e) {}
+}
+
+const SPECIALTY_LABELS = {
+  owner: 'רופא מומחה, בעל קליניקה פרטית',
+  employed: 'רופא מומחה, שכיר בבי"ח / קופה',
+  resident: 'רופא מתמחה',
+  other: 'לא רופא / מקצוע אחר בתחום הרפואה'
+};
+const ASSETS_LABELS = {
+  over400: '400,000 ש"ח ומעלה',
+  under400: 'פחות מ-400,000 ש"ח'
+};
+const CHALLENGE_LABELS = {
+  coverage: 'לא בטוח שהביטוחים שלי מכסים את מה שאני חושב',
+  fees: 'משלם עמלות גבוהות בלי לדעת בדיוק על מה',
+  retirement: 'רוצה לבנות תוכנית פרישה מסודרת',
+  'none-yet': 'פשוט לא הספקתי לבדוק את זה עדיין'
+};
+
 class Component extends DCLogic {
   state = { step: 0, specialty: '', assets: '', challenge: '', analyzing: false, qualified: null };
 
@@ -199,6 +244,25 @@ class Component extends DCLogic {
         setTimeout(() => {
           const qualified = this.state.specialty !== 'other';
           this.setState({ analyzing: false, qualified });
+          const lead = this.leadParams || new URLSearchParams();
+          sendWebhook({
+            event: 'survey_completed',
+            name: lead.get('name') || '',
+            phone: lead.get('phone') || '',
+            email: lead.get('email') || '',
+            specialty: SPECIALTY_LABELS[this.state.specialty] || this.state.specialty,
+            assets: ASSETS_LABELS[this.state.assets] || this.state.assets,
+            challenge: CHALLENGE_LABELS[challenge] || challenge,
+            qualified: qualified ? 'כן' : 'לא',
+            ts: new Date().toISOString()
+          });
+          if (qualified && typeof fbq === 'function') fbq('track', 'CompleteRegistration');
+          if (qualified) {
+            const qsNav = lead.toString();
+            setTimeout(() => {
+              window.location.href = qsNav ? './thank-you.html?' + qsNav : './thank-you.html';
+            }, 1800);
+          }
         }, 2600);
       },
       goBack: () => this.setState(st => ({ step: Math.max(0, st.step - 1) }))
