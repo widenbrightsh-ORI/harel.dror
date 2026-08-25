@@ -194,6 +194,23 @@ function sendWebhook(payload) {
   } catch (e) {}
 }
 
+const SPECIALTY_LABELS = {
+  owner: 'רופא מומחה, בעל קליניקה פרטית',
+  employed: 'רופא מומחה, שכיר בבי"ח / קופה',
+  resident: 'רופא מתמחה',
+  other: 'לא רופא / מקצוע אחר בתחום הרפואה'
+};
+const ASSETS_LABELS = {
+  over400: '400,000 ש"ח ומעלה',
+  under400: 'פחות מ-400,000 ש"ח'
+};
+const CHALLENGE_LABELS = {
+  coverage: 'לא בטוח שהביטוחים שלי מכסים את מה שאני חושב',
+  fees: 'משלם עמלות גבוהות בלי לדעת בדיוק על מה',
+  retirement: 'רוצה לבנות תוכנית פרישה מסודרת',
+  'none-yet': 'פשוט לא הספקתי לבדוק את זה עדיין'
+};
+
 class Component extends DCLogic {
   state = { step: 0, specialty: '', assets: '', challenge: '', analyzing: false, qualified: null };
 
@@ -233,13 +250,19 @@ class Component extends DCLogic {
             name: lead.get('name') || '',
             phone: lead.get('phone') || '',
             email: lead.get('email') || '',
-            specialty: this.state.specialty,
-            assets: this.state.assets,
-            challenge,
-            qualified,
+            specialty: SPECIALTY_LABELS[this.state.specialty] || this.state.specialty,
+            assets: ASSETS_LABELS[this.state.assets] || this.state.assets,
+            challenge: CHALLENGE_LABELS[challenge] || challenge,
+            qualified: qualified ? 'כן' : 'לא',
             ts: new Date().toISOString()
           });
           if (qualified && typeof fbq === 'function') fbq('track', 'CompleteRegistration');
+          if (qualified) {
+            const qsNav = lead.toString();
+            setTimeout(() => {
+              window.location.href = qsNav ? './thank-you.html?' + qsNav : './thank-you.html';
+            }, 1800);
+          }
         }, 2600);
       },
       goBack: () => this.setState(st => ({ step: Math.max(0, st.step - 1) }))
